@@ -28,6 +28,7 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(0.1vmin);
+  z-index: 1;
   background-image: radial-gradient(ellipse at top, transparent 0%, var(--dark-color)), radial-gradient(ellipse at bottom, var(--dark-color), rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 19px, transparent 19px, transparent 22px), linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
 }
 
@@ -281,7 +282,7 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
   animation-delay: 3.5s;
 }
 .flower__grass {
-  --c: #159faa;
+  --c: #aa1560;
   --line-w: 1.5vmin;
   position: absolute;
   bottom: 12vmin;
@@ -445,7 +446,7 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
 .flower__g-long {
   --w: 2vmin;
   --h: 6vmin;
-  --c: #159faa;
+  --c: #aa157d;
   position: absolute;
   bottom: 10vmin;
   left: -3vmin;
@@ -1013,6 +1014,7 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
   background: #ff69b4;
   border-radius: 100% 0 100% 0;
   animation: fall 8s linear infinite;
+  z-index: 10;
 }
 
 @keyframes fall {
@@ -1034,8 +1036,18 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
   border-radius: 50%;
   box-shadow: 0 0 2vmin yellow;
   animation: fly 5s infinite;
+  z-index: 1;
 }
-
+.firefly:nth-child(1) { top:10%; left:20%; animation-delay:0s; }
+.firefly:nth-child(2) { top:30%; left:60%; animation-delay:1s; }
+.firefly:nth-child(3) { top:70%; left:40%; animation-delay:2s; }
+.firefly:nth-child(4) { top:20%; left:80%; animation-delay:3s; }
+.firefly:nth-child(5) { top:50%; left:10%; animation-delay:4s; }
+.firefly:nth-child(6) { top:80%; left:90%; animation-delay:5s; }
+.firefly:nth-child(7) { top:40%; left:30%; animation-delay:1.5s; }
+.firefly:nth-child(8) { top:60%; left:70%; animation-delay:2.5s; }
+.firefly:nth-child(9) { top:15%; left:50%; animation-delay:3.5s; }
+.firefly:nth-child(10){ top:90%; left:25%; animation-delay:4.5s; }
 @keyframes fly {
   0%,100% {
     transform: translate(0,0);
@@ -1061,7 +1073,7 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
 }
 .flowers {
   animation: wind 6s ease-in-out infinite;
-   z-index: 10;
+   z-index: 1;
    transform:scale(.65);
    transition:transform .3s ease;
 }
