@@ -985,5 +985,99 @@ background-image: linear-gradient(to top, #ff69b4, #ffd1e6);
 .not-loaded * {
   animation-play-state: paused !important;
 }
+.moon {
+  position: fixed;
+  top: 10vmin;
+  right: 15vmin;
+  width: 15vmin;
+  height: 15vmin;
+  background: radial-gradient(circle, #fff7c7, #ffe680);
+  border-radius: 50%;
+  box-shadow: 0 0 5vmin #fff7c7;
+  animation: moonGlow 4s infinite alternate;
+    z-index: 5;
+}
 
-/*# sourceMappingURL=style.css.map */
+@keyframes moonGlow {
+  from {
+    box-shadow: 0 0 3vmin #fff7c7;
+  }
+  to {
+    box-shadow: 0 0 8vmin #fff7c7;
+  }
+}
+.petal {
+  position: fixed;
+  width: 2vmin;
+  height: 3vmin;
+  background: #ff69b4;
+  border-radius: 100% 0 100% 0;
+  animation: fall 8s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+.firefly {
+  position: absolute;
+  width: 1vmin;
+  height: 1vmin;
+  background: #ffff00;
+  border-radius: 50%;
+  box-shadow: 0 0 2vmin yellow;
+  animation: fly 5s infinite;
+}
+
+@keyframes fly {
+  0%,100% {
+    transform: translate(0,0);
+    opacity: .2;
+  }
+
+  50% {
+    transform: translate(5vmin,-10vmin);
+    opacity: 1;
+  }
+}
+.reflection {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:25vh;
+  background:linear-gradient(
+    to top,
+    rgba(255,105,180,.25),
+    transparent
+  );
+  filter:blur(20px);
+}
+.flowers {
+  animation: wind 6s ease-in-out infinite;
+   z-index: 10;
+   transform:scale(.65);
+   transition:transform .3s ease;
+}
+
+@keyframes wind {
+  0%,100% {
+    transform: scale(.9) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(.9) rotate(2deg);
+  }
+}
+@media(max-width:600px){
+  .flower__light {
+    display:none;
+  }
+}
+
